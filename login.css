@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("image.png");
+}
+
+.wrapper {
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: white;
+    padding: 20px 45px 20px 20px;
+    outline: none;
+}
+
+.input-box input::placeholder {
+    color: transparent;
+    transition: color 0.3s ease;
+}
+
+.input-box input:focus::placeholder,
+.input-box input:not(:placeholder-shown)::placeholder {
+    color: rgba(255, 255, 255, 0.6); 
+}
+
+.input-box label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    background: transparent;
+    padding: 0 4px;
+}
+
+.input-box input:focus ~ label,
+.input-box input:not(:placeholder-shown) ~ label {
+    top: -1px;
+    left: 20px;
+    font-size: 12px;
+    color: white; 
+    background: transparent;
+    border-radius: 4px;
+    padding: 0 5px;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: white;
+}
+
+.wrapper .rememberme {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+.rememberme label input {
+    accent-color: burlywood;
+    margin-right: 3px;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    margin: 10px 0;
+    transition: 0.3s ease;
+}
+
+.wrapper .btn:hover {
+    background-color: burlywood;
+}
+
+.wrapper .forgotpass {
+    font-size: 16px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.forgotpass:hover {
+    text-decoration: underline;
+}
+
+.wrapper .sign-up {
+    font-size: 16px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.sign-up p a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.sign-up p a:hover {
+    text-decoration: underline;
+}
+
+.popup {
+    display: none; 
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.popup-content img {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.popup-content h2 {
+    color: #333;
+    margin: 10px 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
